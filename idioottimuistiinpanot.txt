@@ -1,0 +1,16 @@
+idioottimuistiinpanot:
+
+buildaus:
+docker build -t savevalo/heli-ots-docker:1.2 .
+
+muista -t 
+
+kontin ja koneen kansion linkitys ajovaiheessa.
+
+docker run --name heli-ots -v $(pwd):/app savevalo/heli-ots-docker:1.2
+
+
+jos ei toimi linuxissa ilman sudo komentoa:
+
+sudo usermod -aG docker $USER
+newgrp docker
