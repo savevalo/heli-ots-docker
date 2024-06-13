@@ -1,5 +1,9 @@
 FROM openjdk:17
 WORKDIR /app
-COPY HeLI.jar ./
+COPY HeLI5.jar ./
 COPY teksti.txt ./
-CMD [ "java", "-jar", "HeLI.jar", "-r", "teksti.txt", "-w", "tulos.txt"]
+ENV confidence=
+ENV topscored=
+CMD java -jar HeLI5.jar ${confidence:-"-empty"} \
+${topscored:-"-empty"} \
+-r teksti.txt -w tulos.txt

@@ -14,3 +14,25 @@ jos ei toimi linuxissa ilman sudo komentoa:
 
 sudo usermod -aG docker $USER
 newgrp docker
+
+        while (args.length > processargs) {
+            int oldprocessargs = processargs;
+			if (args.length > processargs && args[processargs].equals("-empty")) {
+				processargs++;
+			}
+
+ei vissiin tarviikkaan:
+
+2. windows:
+
+docker run --platform linux/amd64 --name heli-ots -v %cd%:/app savevalo/heli-ots-docker:1.27
+
+you can add options -c and -t with these commands:
+
+-e confidence=-c -e top-scored="-t 2"
+
+enter them in the docker run command before the container name like so:
+
+docker run --platform linux/amd64 --name heli-ots -e confidence=-c -e top-scored="-t 2" savevalo/heli-ots-docker:1.27
+
+cat tulos.txt
